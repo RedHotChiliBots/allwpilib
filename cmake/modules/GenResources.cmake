@@ -16,9 +16,9 @@ MACRO(GENERATE_RESOURCES inputDir outputDir prefix namespace outputFiles)
         "-Doutput=${output}"
         "-Dprefix=${prefix}"
         "-Dnamespace=${namespace}"
-        -P "${CMAKE_SOURCE_DIR}/cmake/scripts/GenResource.cmake"
+        -P "${CMAKE_CURRENT_SOURCE_DIR}/../cmake/scripts/GenResource.cmake"
       MAIN_DEPENDENCY ${input}
-      DEPENDS ${CMAKE_SOURCE_DIR}/cmake/scripts/GenResource.cmake
+      DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../cmake/scripts/GenResource.cmake
       VERBATIM
     )
   ENDFOREACH()
