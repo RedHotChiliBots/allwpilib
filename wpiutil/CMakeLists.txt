@@ -77,7 +77,7 @@ set_target_properties(wpiutil PROPERTIES DEBUG_POSTFIX "d")
 
 set_property(TARGET wpiutil PROPERTY FOLDER "libraries")
 
-if(NOT MSVC)
+if(NOT MSVC AND NOT MINGW)
     target_sources(wpiutil PRIVATE ${uv_unix_src})
     if (APPLE)
         target_sources(wpiutil PRIVATE ${uv_darwin_src})
